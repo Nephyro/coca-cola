@@ -64,3 +64,18 @@ header {
 header span {
     font-weight: 600;
 }
+
+footer {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 75px;
+    padding-left: 75px;
+    color: #FFFFFF;
+    font-weight: 100;
+}
+
+fonte div {
+    width: 64px;
+}
