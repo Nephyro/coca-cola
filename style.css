@@ -9,7 +9,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(#CF2425, #DA6062 45%, #DA6062 );
+    background: linear-gradient(#CF2425, #DA6062 50%, #DA6062 50%, #CF2425);
 }
 
 header, footer {
@@ -19,7 +19,7 @@ header, footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 8000px;
 }
 
 main {
@@ -27,7 +27,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #DA6062;
 }
 
 .background-logo {
@@ -42,16 +41,24 @@ main {
     z-index: -1;
 }
 
-.contet-text {
+.content-text {
     position: absolute;
     color: #FFFFFF;
     font-size: 2.5rem;
     width: 240px;
     transform: translateX(-100%);
+    text-align: end;
+    margin-right: 100px;
+    font-family: sans-serif;
+    transition: 1s;
+}
+
+.content-text:hover {
+    font-size: 200%;
 }
 
 .content-image {
-    height: 85vh;
+    height: 80vh;
 }
 
 header {
@@ -75,11 +82,50 @@ footer {
     padding-left: 75px;
     color: #FFFFFF;
     font-weight: 100;
+    font-size: 25px;
+    font-family:sans-serif ;
 }
 
 footer div {
     width: 64px;
 }
+
+.nome {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.nome::before,
+.nome::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0;
+    transition: width 0.4s ease;
+}
+
+.nome::before {
+    top: 0;
+    left: 0;
+    background: red;
+}
+
+.nome::after {
+    bottom: 0;
+    right: 0;
+    background: blue;
+}
+
+.nome:hover::before {
+    width: 100%;
+}
+
+.nome:hover::after {
+    width: 100%;
+}
+
+
 
 @media (max-width: 768px) {
     header {
