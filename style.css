@@ -9,13 +9,13 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(#CF2425, #DA6062 50%, #DA6062 50%, #CF2425);
+    background: linear-gradient(45deg,#CF2425, #620c0e 50%, #430708 50%, #540707);
     overflow-x: hidden;
 }
 
 header, footer {
     height: 100px;
-    background-color: #CF2425;
+    background-color: black;
     color: #FFFFFF;
     display: flex;
     align-items: center;
@@ -89,6 +89,33 @@ main {
     height: 80vh;
     max-width: 100%;
     object-fit: cover;
+}
+
+.content-text span::before,
+.content-text span::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background: #FFFFFF;
+    height: 0;
+    transition: height 0.5s ease;
+}
+
+.content-text:hover span::before {
+    height: 100%;
+}
+.content-text:hover span::after {
+    height: 100%;
+}
+
+.content-text span::before {
+    top: 0;
+    left: 0;
+}
+
+.content-text span::after {
+    bottom: 0;
+    right: 0;
 }
 
 header {
