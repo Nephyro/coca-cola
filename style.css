@@ -43,6 +43,8 @@ main {
 
 .content-text {
     position: absolute;
+    display: inline-block;
+    cursor: pointer;
     color: #FFFFFF;
     font-size: 2.5rem;
     width: 240px;
@@ -50,11 +52,34 @@ main {
     text-align: end;
     margin-right: 100px;
     font-family: sans-serif;
-    transition: 1s;
 }
 
-.content-text:hover {
-    font-size: 200%;
+.content-text::before,
+.content-text::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    background: #FFFFFF;
+    width: 0;
+    transition: width 0.7s ease;
+}
+
+.content-text::before {
+    top: 0;
+    left: 0;
+}
+
+.content-text::after {
+    bottom: 0;
+    right: 0;
+}
+
+.content-text:hover::before {
+    width: 100%;
+}
+
+.content-text:hover::after {
+    width: 100%;
 }
 
 .content-image {
@@ -82,50 +107,13 @@ footer {
     padding-left: 75px;
     color: #FFFFFF;
     font-weight: 100;
-    font-size: 25px;
+    font-size: 15px;
     font-family:sans-serif ;
 }
 
 footer div {
     width: 64px;
 }
-
-.nome {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.nome::before,
-.nome::after {
-    content: "";
-    position: absolute;
-    height: 2px;
-    width: 0;
-    transition: width 0.4s ease;
-}
-
-.nome::before {
-    top: 0;
-    left: 0;
-    background: red;
-}
-
-.nome::after {
-    bottom: 0;
-    right: 0;
-    background: blue;
-}
-
-.nome:hover::before {
-    width: 100%;
-}
-
-.nome:hover::after {
-    width: 100%;
-}
-
-
 
 @media (max-width: 768px) {
     header {
