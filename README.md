@@ -4,4 +4,4 @@
 
 #Minha página Web com HTML e CSS
 
-![image.png](.img/image.png)
+![image.png](./img/image.png)
